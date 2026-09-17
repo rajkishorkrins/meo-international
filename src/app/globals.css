@@ -1,26 +1,83 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "DM Serif Display";
+  src: url("/fonts/DMSerifDisplay-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
+  --primary: #535353;
+  --secondary: #0072BC;
+  --light-blue: #8EC0E6;
+  --blue: #2B4FA4;
+  --dark: #222547;
+
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #535353;
 }
 
 @theme inline {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-light-blue: var(--light-blue);
+  --color-blue: var(--blue);
+  --color-dark: var(--dark);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-heading: "DM Serif Display", serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "DM Serif Display", serif;
+}
+
+/* =========================
+   INFINITE CARRIER CAROUSEL
+========================= */
+
+.carrier-track {
+  display: flex;
+  width: max-content;
+  animation: carrier-infinite-scroll 35s linear infinite;
+  will-change: transform;
+}
+
+.carrier-group {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.carrier-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes carrier-infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carrier-track {
+    animation-play-state: paused;
+  }
 }
