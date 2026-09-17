@@ -79,7 +79,7 @@ const staggerContainer = {
 
 export default function Services() {
   return (
-    <section className="bg-primary/15 px-6 py-20 sm:px-8 lg:px-10 lg:py-28">
+    <section className="bg-white px-6 py-20 sm:px-8 lg:px-10 lg:py-28">
       <div className="mx-auto max-w-7xl">
         {/* =========================
             SECTION HEADER
@@ -263,7 +263,7 @@ export default function Services() {
                         transition={{
                           duration: 0.4,
                         }}
-                        className="mt-8 h-2 rounded-full bg-light-blue"
+                        className="mt-8 h-1 rounded-full bg-light-blue group-hover:-translate-y-6"
                       />
 
                       {/* Description */}

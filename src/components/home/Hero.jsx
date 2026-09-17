@@ -48,7 +48,7 @@ const features = [
 
 export default function Hero() {
   return (
-    <section className="relative isolate min-h-[780px] overflow-hidden bg-[#101a35] mt-20">
+    <section className="relative isolate min-h-[780px] overflow-hidden bg-[#101a35] mt-12">
       {/* Background Image */}
       <div
         className="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat"

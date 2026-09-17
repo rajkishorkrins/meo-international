@@ -38,7 +38,7 @@ const staggerContainer = {
 
 export default function Branches() {
   return (
-    <section className="relative overflow-hidden bg-primary/15 px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+    <section className="relative overflow-hidden bg-white px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
       <div className="mx-auto max-w-[1600px]">
         <div className="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           {/* =========================
