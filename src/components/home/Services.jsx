@@ -39,7 +39,7 @@ const services = [
     title: "Custom Clearance",
     description:
       "We are a leading Customs Clearing Agent based in Delhi. Updated with customs regulations and procedures, we efficiently handle import and export consignments by sea, air and road.",
-    image: "/images/service/customs-clearance.png",
+    image: "/images/service/Customs-Clearance.png",
     href: "/services/custom-clearance/",
     icon: FileCheck,
   },
