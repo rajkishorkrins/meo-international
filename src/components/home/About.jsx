@@ -55,7 +55,7 @@ const staggerContainer = {
 
 export default function About() {
   return (
-    <section className="relative overflow-hidden bg-primary/15 px-6 py-20 sm:px-8 lg:px-10 lg:py-28">
+    <section className="relative overflow-hidden bg-white/15 px-6 py-20 sm:px-8 lg:px-10 lg:py-28">
       <div className="relative z-10 mx-auto max-w-7xl">
 
         {/* =========================

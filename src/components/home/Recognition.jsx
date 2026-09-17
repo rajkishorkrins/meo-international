@@ -90,7 +90,7 @@ const staggerContainer = {
 
 export default function Recognition() {
   return (
-    <section className="bg-white px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+    <section className="bg-white/15 px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
       <div className="mx-auto max-w-[1600px]">
 
         {/* =========================
@@ -107,12 +107,23 @@ export default function Recognition() {
           className="mx-auto max-w-2xl text-center"
         >
           <motion.span
-            variants={fadeUp}
-            className="text-base font-semibold uppercase tracking-[0.3em] text-secondary"
-          >
-            Our Credentials
-          </motion.span>
-
+                       variants={fadeUp}
+                       className="inline-flex items-center gap-2 text-lg font-semibold uppercase tracking-[0.25em] text-secondary"
+                     >
+                       <motion.span
+                         initial={{ scale: 0 }}
+                         whileInView={{ scale: 1 }}
+                         viewport={{ once: true }}
+                         transition={{
+                           duration: 0.5,
+                           delay: 0.2,
+                         }}
+                         className="h-2 w-2 rounded-full bg-secondary"
+                       />
+         
+                       Our Credentials
+                     </motion.span>
+         
           <motion.h2
             variants={fadeUp}
             className="mt-4 text-3xl leading-tight text-dark sm:text-4xl md:text-5xl"

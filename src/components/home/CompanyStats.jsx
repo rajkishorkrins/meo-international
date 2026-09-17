@@ -70,7 +70,6 @@ const staggerContainer = {
 export default function CompanyStats() {
   return (
     <section className="relative overflow-hidden bg-dark px-6 py-20 sm:px-8 lg:px-10">
-
       {/* =========================
           DECORATIVE BACKGROUND
       ========================== */}
@@ -140,7 +139,6 @@ export default function CompanyStats() {
       </motion.div>
 
       <div className="relative z-10 mx-auto max-w-[1600px]">
-
         {/* =========================
             SECTION HEADER
         ========================== */}
@@ -155,10 +153,7 @@ export default function CompanyStats() {
           className="grid gap-10 lg:grid-cols-12 lg:items-end lg:gap-16"
         >
           {/* Left */}
-          <motion.div
-            variants={fadeUp}
-            className="ml-0 lg:col-span-5 lg:ml-8"
-          >
+          <motion.div variants={fadeUp} className="ml-0 lg:col-span-5 lg:ml-8">
             <motion.span
               variants={fadeUp}
               className="inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.3em] text-light-blue"
@@ -178,7 +173,6 @@ export default function CompanyStats() {
                 }}
                 className="h-2 w-2 rounded-full bg-light-blue"
               />
-
               MEO International Logistics
             </motion.span>
 
@@ -210,17 +204,14 @@ export default function CompanyStats() {
           </motion.div>
 
           {/* Right Description */}
-          <motion.div
-            variants={fadeUp}
-            className="lg:col-span-7"
-          >
+          <motion.div variants={fadeUp} className="lg:col-span-7">
             <p className="max-w-3xl text-base leading-8 text-white/65 sm:text-lg sm:leading-9 lg:ml-auto">
-              Meo International Logistics is a most innovative logistic
-              company that reaches out to provide comprehensive logistics
-              solutions. The young and dynamic management team at Meo
-              International Logistic contributes greatly with their new
-              thinking by adapting new technology, applying latest and
-              modern methods in the field to help the needs of customers.
+              Meo International Logistics is a most innovative logistic company
+              that reaches out to provide comprehensive logistics solutions. The
+              young and dynamic management team at Meo International Logistic
+              contributes greatly with their new thinking by adapting new
+              technology, applying latest and modern methods in the field to
+              help the needs of customers.
             </p>
           </motion.div>
         </motion.div>
@@ -267,18 +258,12 @@ export default function CompanyStats() {
               <motion.div
                 key={statistic.label}
                 variants={fadeUp}
-                whileHover={{
-                  y: -10,
-                  transition: {
-                    duration: 0.35,
-                    ease: "easeOut",
-                  },
-                }}
+                whileHover="hover"
+                initial="rest"
                 className="group relative min-h-[210px] overflow-hidden rounded-2xl bg-white p-6 shadow-sm transition-shadow duration-500 hover:shadow-xl"
               >
                 {/* Top Row */}
                 <div className="flex items-start justify-between">
-
                   {/* Icon */}
                   <motion.div
                     whileHover={{
@@ -290,10 +275,7 @@ export default function CompanyStats() {
                     }}
                     className="flex h-11 w-11 items-center justify-center rounded-xl bg-light-blue/15 text-secondary transition-colors duration-500 group-hover:bg-secondary group-hover:text-white"
                   >
-                    <Icon
-                      size={21}
-                      strokeWidth={1.6}
-                    />
+                    <Icon size={21} strokeWidth={1.6} />
                   </motion.div>
 
                   {/* Small Number Indicator */}
@@ -331,13 +313,17 @@ export default function CompanyStats() {
                   {statistic.label}
                 </p>
 
-                {/* Bottom Accent */}
+                {/* Bottom Hover Line */}
                 <motion.div
-                  initial={{
-                    width: 32,
-                  }}
-                  whileHover={{
-                    width: "100%",
+                  variants={{
+                    rest: {
+                      width: 32,
+                      y: 0,
+                    },
+                    hover: {
+                      width: "100%",
+                      y: 0,
+                    },
                   }}
                   transition={{
                     duration: 0.5,

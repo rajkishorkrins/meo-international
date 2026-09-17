@@ -89,7 +89,7 @@ function PartnerGroup() {
       {carrierPartners.map((partner, index) => (
         <motion.div
           key={`${partner.id}-${index}`}
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 1, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{
@@ -101,7 +101,7 @@ function PartnerGroup() {
             y: -8,
             scale: 1.03,
           }}
-          className="group mx-3 flex h-32 w-44 shrink-0 items-center justify-center rounded-2xl border border-gray-100 bg-white px-6 py-5 shadow-sm transition-all duration-300 hover:border-secondary/30 hover:shadow-md sm:mx-4 sm:h-36 sm:w-52"
+          className="group mx-3 flex h-32 w-44 shrink-0  items-center justify-center rounded-2xl border border-gray-100 bg-white px-6 py-5 shadow-sm transition-all duration-300 hover:border-secondary/30 hover:shadow-md sm:mx-4 sm:h-36 sm:w-52"
         >
           <motion.img
             src={partner.image}
@@ -109,7 +109,7 @@ function PartnerGroup() {
             loading="lazy"
             whileHover={{ scale: 1.08 }}
             transition={{ duration: 0.3 }}
-            className="max-h-24 max-w-full object-contain grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+            className="max-h-24 max-w-full object-contain opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
           />
         </motion.div>
       ))}
@@ -169,7 +169,7 @@ export default function CarrierPartners() {
 
       {/* Infinite Carousel */}
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={{ opacity:1 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.8, delay: 0.3 }}

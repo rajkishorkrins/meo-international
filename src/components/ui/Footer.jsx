@@ -125,7 +125,7 @@ export default function Footer() {
             ease: "linear",
           },
         }}
-        className="pointer-events-none absolute -bottom-52 -left-40 h-[260px] w-full rounded-full border border-white/5"
+        
       />
 
       {/* Main Footer */}

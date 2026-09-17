@@ -38,7 +38,7 @@ const staggerContainer = {
 
 export default function Branches() {
   return (
-    <section className="relative overflow-hidden bg-[#f5f8fb] px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+    <section className="relative overflow-hidden bg-primary/15 px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
       <div className="mx-auto max-w-[1600px]">
         <div className="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           {/* =========================
@@ -159,7 +159,7 @@ export default function Branches() {
               duration: 0.9,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="relative min-h-[420px] w-full overflow-hidden p-4 sm:min-h-[520px] sm:p-6 lg:min-h-[520px]"
+            className="relative min-h-[500px] w-full overflow-hidden  sm:min-h-[500px]  lg:min-h-[500px]"
           >
             {/* Map Background */}
             <motion.div
@@ -227,45 +227,6 @@ export default function Branches() {
                 Nationwide Reach
               </span>
             </motion.div>
-
-            {/* Decorative Circles */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.7 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              animate={{
-                rotate: 360,
-              }}
-              transition={{
-                opacity: { duration: 0.8 },
-                scale: { duration: 0.8 },
-                rotate: {
-                  duration: 50,
-                  repeat: Infinity,
-                  ease: "linear",
-                },
-              }}
-              className="pointer-events-none absolute -bottom-20 -right-20 h-64 w-64 rounded-full border-[35px] border-secondary/10"
-            />
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.7 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              animate={{
-                rotate: -360,
-              }}
-              transition={{
-                opacity: { duration: 0.8, delay: 0.2 },
-                scale: { duration: 0.8, delay: 0.2 },
-                rotate: {
-                  duration: 45,
-                  repeat: Infinity,
-                  ease: "linear",
-                },
-              }}
-              className="pointer-events-none absolute -left-20 -top-20 h-56 w-56 rounded-full border-[30px] border-light-blue/10"
-            />
           </motion.div>
         </div>
       </div>

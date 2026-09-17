@@ -81,7 +81,7 @@ const staggerContainer = {
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-primary/15 px-5 py-12 sm:px-8 lg:px-10 lg:py-14">
+    <section className="bg-white/15 px-5 py-12 sm:px-8 lg:px-10 lg:py-14">
       <div className="mx-auto max-w-[1600px]">
 
         {/* =========================

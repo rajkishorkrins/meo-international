@@ -79,9 +79,8 @@ const staggerContainer = {
 
 export default function Services() {
   return (
-    <section className="bg-[#f8fafb] px-6 py-20 sm:px-8 lg:px-10 lg:py-28">
+    <section className="bg-primary/15 px-6 py-20 sm:px-8 lg:px-10 lg:py-28">
       <div className="mx-auto max-w-7xl">
-
         {/* =========================
             SECTION HEADER
         ========================== */}
@@ -111,7 +110,6 @@ export default function Services() {
                 }}
                 className="h-2 w-2 rounded-full bg-secondary"
               />
-
               Our Approach
             </motion.span>
 
@@ -124,15 +122,11 @@ export default function Services() {
           </div>
 
           {/* Right */}
-          <motion.div
-            variants={fadeUp}
-            className="lg:pb-2"
-          >
+          <motion.div variants={fadeUp} className="lg:pb-2">
             <p className="max-w-xl text-base leading-7 text-primary/75 sm:text-lg sm:leading-8">
-              MEO International is a fast-growing organization with a
-              team of young and experienced professionals trained in
-              handling all types of import and export shipments to and
-              from India.
+              MEO International is a fast-growing organization with a team of
+              young and experienced professionals trained in handling all types
+              of import and export shipments to and from India.
             </p>
           </motion.div>
         </motion.div>
@@ -215,9 +209,7 @@ export default function Services() {
                     />
 
                     {/* Normal Overlay */}
-                    <motion.div
-                      className="absolute inset-0 bg-black/45 transition-colors duration-500 group-hover:bg-secondary/65"
-                    />
+                    <motion.div className="absolute inset-0 bg-black/45 transition-colors duration-500 group-hover:bg-secondary/65" />
                   </div>
 
                   {/* Decorative Circle */}
@@ -239,7 +231,6 @@ export default function Services() {
 
                   {/* Card Content */}
                   <div className="relative z-10 flex h-full flex-col p-7">
-
                     {/* Icon */}
                     <motion.div
                       whileHover={{
@@ -251,15 +242,11 @@ export default function Services() {
                       }}
                       className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-white/30 bg-white/10 text-white backdrop-blur-sm transition-all duration-500 group-hover:border-white/50 group-hover:bg-white/15"
                     >
-                      <Icon
-                        size={28}
-                        strokeWidth={1.6}
-                      />
+                      <Icon size={28} strokeWidth={1.6} />
                     </motion.div>
 
                     {/* Bottom Content */}
                     <div className="mt-auto">
-
                       {/* Title */}
                       <h3 className="max-w-[290px] text-2xl leading-tight text-white sm:text-[26px]">
                         {service.title}
@@ -276,11 +263,11 @@ export default function Services() {
                         transition={{
                           duration: 0.4,
                         }}
-                        className="mt-4 h-2 rounded-full bg-light-blue"
+                        className="mt-8 h-2 rounded-full bg-light-blue"
                       />
 
                       {/* Description */}
-                      <div className="grid grid-rows-[0fr] opacity-0 transition-all duration-500 group-hover:mt-3 group-hover:grid-rows-[2fr] group-hover:opacity-100">
+                      <div className="grid grid-rows-[0fr] opacity-0 transition-all duration-500 group-hover:mt-4 group-hover:grid-rows-[2fr] group-hover:opacity-100 group-hover:-translate-y-6">
                         <div className="overflow-hidden">
                           <p className="max-w-[340px] text-sm leading-6 text-white/90 sm:text-base sm:leading-6">
                             {service.description}
@@ -302,7 +289,6 @@ export default function Services() {
                     className="group inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-colors duration-300 hover:bg-secondary"
                   >
                     View details
-
                     <motion.span
                       variants={{
                         hover: {
@@ -314,10 +300,7 @@ export default function Services() {
                         duration: 0.25,
                       }}
                     >
-                      <ArrowUpRight
-                        size={16}
-                        strokeWidth={2}
-                      />
+                      <ArrowUpRight size={16} strokeWidth={2} />
                     </motion.span>
                   </motion.a>
                 </div>
