@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import SocialIcon from "@/components/ui/SocialIcon";
 
 const navLinks = [
@@ -18,7 +19,7 @@ const navLinks = [
       { name: "Management", href: "/management" },
       { name: "Quality Policy", href: "/quality-policy" },
       { name: "Commitment", href: "/commitment" },
-      { name: "Diversived customers", href: "/diversived-customers" },
+      { name: "Diversified Customers", href: "/diversived-customers" },
       { name: "Networks And Associations", href: "/networks" },
     ],
   },
@@ -86,12 +87,34 @@ const socialLinks = [
 export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    setOpenMobileDropdown(null);
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((prev) => {
+      const next = !prev;
+
+      if (!next) {
+        setOpenMobileDropdown(null);
+      }
+
+      return next;
+    });
+  };
 
   return (
-    <header className="fixed left-0 top-0 z-[100] w-full bg-white/65 backdrop-blur-xl">
+    <header className="fixed left-0 top-0 z-[100] w-full bg-white backdrop-blur-xl">
       <nav className="mx-auto flex max-w-8xl items-center justify-between px-6 py-6 lg:px-10">
         {/* Logo */}
-        <a href="/" className="-mt-2 flex">
+        <Link
+          href="/"
+          className="-mt-2 flex"
+          onClick={closeMobileMenu}
+        >
           <Image
             src="/meo-logo-footer.png"
             alt="MEO International Logistics"
@@ -99,7 +122,7 @@ export default function Navbar() {
             height={50}
             priority
           />
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="ml-18 hidden gap-10 lg:flex">
@@ -114,29 +137,35 @@ export default function Navbar() {
               }}
               onMouseLeave={() => setOpenDropdown(null)}
             >
-              <a
+              {/* Main Navigation Link */}
+              <Link
                 href={link.href}
-                className="flex items-center text-xm font-medium text-primary transition-colors hover:text-secondary"
+                onClick={(e) => {
+                  if (link.dropdown && link.href === "#") {
+                    e.preventDefault();
+                  }
+                }}
+                className="flex items-center text-sm font-medium text-primary transition-colors hover:text-secondary"
               >
                 {link.name}
 
                 {link.dropdown && (
                   <span className="ml-1 text-xs">▾</span>
                 )}
-              </a>
+              </Link>
 
               {/* Desktop Dropdown */}
               {link.dropdown && openDropdown === link.name && (
                 <div className="absolute left-0 top-full z-50 pt-3">
                   <div className="min-w-56 rounded-lg border border-gray-100 bg-white p-2 shadow-lg">
                     {link.dropdown.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
                         href={item.href}
-                        className="block rounded-md px-4 py-2.5 text-xm text-primary transition-colors hover:bg-light-blue/20 hover:text-secondary"
+                        className="block rounded-md px-4 py-2.5 text-sm text-primary transition-colors hover:bg-light-blue/20 hover:text-secondary"
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -161,7 +190,7 @@ export default function Navbar() {
         <button
           type="button"
           className="text-2xl text-dark lg:hidden"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          onClick={toggleMobileMenu}
           aria-label="Toggle menu"
           aria-expanded={isMobileMenuOpen}
         >
@@ -171,37 +200,89 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="border-t border-gray-100 bg-white px-6 py-5 lg:hidden">
-          {/* Mobile Nav Links */}
-          <div className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <div key={link.name}>
-                <a
-                  href={link.href}
-                  className="text-base font-medium text-primary transition-colors hover:text-secondary"
-                >
-                  {link.name}
-                </a>
+        <div className="max-h-[calc(100vh-88px)] overflow-y-auto border-t border-gray-100 bg-white px-6 py-5 lg:hidden">
+          {/* Mobile Navigation Links */}
+          <div className="flex flex-col gap-1">
+            {navLinks.map((link) => {
+              const hasDropdown = Boolean(link.dropdown);
+              const isOpen = openMobileDropdown === link.name;
 
-                {/* Mobile Dropdown */}
-                {link.dropdown && (
-                  <div className="ml-4 mt-2 flex flex-col gap-2">
-                    {link.dropdown.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className="text-sm text-primary/70 transition-colors hover:text-secondary"
+              return (
+                <div
+                  key={link.name}
+                  className="border-b border-gray-50 py-2 last:border-none"
+                >
+                  <div className="flex items-center justify-between">
+                    {/* Main Mobile Link */}
+                    <Link
+                      href={link.href}
+                      onClick={(e) => {
+                        if (hasDropdown && link.href === "#") {
+                          e.preventDefault();
+
+                          setOpenMobileDropdown(
+                            isOpen ? null : link.name
+                          );
+                        } else {
+                          closeMobileMenu();
+                        }
+                      }}
+                      className="flex-1 py-2 text-base font-medium text-primary transition-colors hover:text-secondary"
+                    >
+                      {link.name}
+                    </Link>
+
+                    {/* Dropdown Toggle */}
+                    {hasDropdown && (
+                      <button
+                        type="button"
+                        aria-label={`Toggle ${link.name} submenu`}
+                        aria-expanded={isOpen}
+                        onClick={() =>
+                          setOpenMobileDropdown(
+                            isOpen ? null : link.name
+                          )
+                        }
+                        className="px-2 py-2 text-sm text-primary"
                       >
-                        {item.name}
-                      </a>
-                    ))}
+                        <span
+                          className={`inline-block transition-transform duration-200 ${
+                            isOpen ? "rotate-180" : ""
+                          }`}
+                        >
+                          ▾
+                        </span>
+                      </button>
+                    )}
                   </div>
-                )}
-              </div>
-            ))}
+
+                  {/* Mobile Dropdown */}
+                  {hasDropdown && (
+                    <div
+                      className={`ml-4 flex flex-col gap-2 overflow-hidden transition-all duration-200 ${
+                        isOpen
+                          ? "mt-2 max-h-96 opacity-100"
+                          : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      {link.dropdown.map((item) => (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          onClick={closeMobileMenu}
+                          className="py-1 text-sm text-primary/70 transition-colors hover:text-secondary"
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
 
-          {/* Mobile Social Media - AFTER CONTACT */}
+          {/* Mobile Social Media */}
           <div className="mt-6 flex items-center gap-5 border-t border-gray-200 pt-5">
             {socialLinks.map((social) => (
               <SocialIcon
@@ -217,4 +298,3 @@ export default function Navbar() {
     </header>
   );
 }
-
