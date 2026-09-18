@@ -53,7 +53,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/images/hero-bg.png')",
+          backgroundImage: "url('/images/hero-bg3.png')",
         }}
       />
 
@@ -61,7 +61,7 @@ export default function Hero() {
       {/* <div className="absolute inset-0 -z-10 bg-[#101a35]/2" /> */}
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#101a35] via-[#101a35]/45 to-[#101a35]/5" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#101a35] via-[#101a35]/25 to-[#101a35]/5" />
 
       {/* Main Content */}
       <div className="mx-auto flex min-h-[780px] max-w-[1600px] items-center px-6 py-24 sm:px-10 lg:px-16 xl:px-24">

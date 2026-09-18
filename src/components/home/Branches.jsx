@@ -54,7 +54,7 @@ export default function Branches() {
             {/* Section Label */}
             <motion.span
               variants={fadeUp}
-              className="inline-flex items-center gap-3 text-base font-semibold uppercase tracking-[0.3em] text-secondary sm:text-base"
+              className="inline-flex items-center gap-3 text-lg font-semibold uppercase tracking-[0.3em] text-secondary sm:text-lg"
             >
               <motion.span
                 initial={{ scale: 0 }}

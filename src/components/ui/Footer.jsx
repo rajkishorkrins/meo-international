@@ -227,7 +227,7 @@ export default function Footer() {
 
             <motion.ul
               variants={staggerContainer}
-              className="mt-5 space-y-2.5"
+              className="mt-5 space-y-8.5"
             >
               {services.map((service) => (
                 <motion.li
@@ -238,7 +238,7 @@ export default function Footer() {
                 >
                   <Link
                     href={service.href}
-                    className="group flex items-start gap-2 text-sm leading-5 text-white/65 transition-colors duration-300 hover:text-light-blue sm:text-base"
+                    className="group flex items-start gap-2 text-sm leading-5 text-white/65 transition-colors duration-300 hover:text-light-blue sm:text-lg"
                   >
                     <ArrowUpRight
                       size={15}

@@ -298,11 +298,11 @@ export default function WhyChooseUs() {
 
                     {/* Content */}
                     <div className="ml-0 sm:ml-4">
-                      <h3 className="text-xl leading-tight text-dark transition-colors duration-500 group-hover:text-secondary sm:text-2xl">
+                      <h3 className="text-xl leading-tight font-bold text-dark transition-colors duration-500 group-hover:text-secondary sm:text-2xl">
                         {reason.title}
                       </h3>
 
-                      <p className="mt-1 max-w-2xl text-sm leading-5 text-primary/70 sm:text-base sm:leading-6">
+                      <p className="mt-1 max-w-2xl text-xs font-light leading-5 text-primary/70 sm:text-base sm:leading-6">
                         {reason.description}
                       </p>
                     </div>

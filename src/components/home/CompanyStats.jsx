@@ -156,7 +156,7 @@ export default function CompanyStats() {
           <motion.div variants={fadeUp} className="ml-0 lg:col-span-5 lg:ml-8">
             <motion.span
               variants={fadeUp}
-              className="inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.3em] text-light-blue"
+              className="inline-flex items-center gap-3 text-xm font-semibold uppercase tracking-[0.3em] text-light-blue"
             >
               <motion.span
                 initial={{
@@ -303,13 +303,13 @@ export default function CompanyStats() {
                   }}
                   className="mt-8"
                 >
-                  <span className="font-sans text-4xl font-semibold leading-none tracking-tight text-dark transition-colors duration-500 group-hover:text-secondary sm:text-5xl">
+                  <span className="font-sans text-4xl font-bold leading-none tracking-tight text-dark transition-colors duration-500 group-hover:text-secondary sm:text-5xl">
                     {statistic.number}
                   </span>
                 </motion.div>
 
                 {/* Label */}
-                <p className="mt-4 max-w-[150px] text-xs font-semibold uppercase leading-5 tracking-[0.12em] text-primary/60 transition-colors duration-500 group-hover:text-primary">
+                <p className="mt-4 max-w-[150px] text-xs font-bold uppercase leading-5 tracking-[0.12em] text-primary/60 transition-colors duration-500 group-hover:text-primary">
                   {statistic.label}
                 </p>
 
