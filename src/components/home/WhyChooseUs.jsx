@@ -83,14 +83,12 @@ export default function WhyChooseUs() {
   return (
     <section className="bg-white/15 px-5 py-12 sm:px-8 lg:px-10 lg:py-14">
       <div className="mx-auto max-w-[1600px]">
-
         {/* =========================
-            MAIN LAYOUT
+            MAIN THREE-COLUMN LAYOUT
         ========================== */}
-        <div className="grid gap-4 lg:grid-cols-[340px_1fr] xl:grid-cols-[520px_1fr]">
-
+        <div className="grid gap-4 lg:grid-cols-[300px_1fr_310px] xl:grid-cols-[380px_1fr_340px]">
           {/* =========================
-              LEFT FEATURE PANEL
+              LEFT INTRODUCTION PANEL
           ========================== */}
           <motion.div
             initial={{
@@ -137,7 +135,7 @@ export default function WhyChooseUs() {
               className="pointer-events-none absolute -bottom-24 -right-24 h-64 w-64 rounded-full border-[45px] border-secondary/20"
             />
 
-            {/* Content */}
+            {/* Left Content */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -172,10 +170,7 @@ export default function WhyChooseUs() {
               </motion.div>
 
               {/* Heading */}
-              <motion.div
-                variants={fadeUp}
-                className="mt-6"
-              >
+              <motion.div variants={fadeUp} className="mt-6">
                 <h2 className="max-w-[400px] text-3xl leading-[1.08] text-white sm:text-4xl">
                   Why choose MEO International Logistics?
                 </h2>
@@ -205,16 +200,13 @@ export default function WhyChooseUs() {
                 variants={fadeUp}
                 className="mt-5 max-w-[420px] text-base leading-6 text-white/75"
               >
-                We go beyond transportation. With experience, expertise
-                and a customer-focused approach, we deliver dependable
-                logistics solutions designed around your business needs.
+                We go beyond transportation. With experience, expertise and a
+                customer-focused approach, we deliver dependable logistics
+                solutions designed around your business needs.
               </motion.p>
 
               {/* Bottom Statement */}
-              <motion.div
-                variants={fadeUp}
-                className="mt-auto pt-8"
-              >
+              <motion.div variants={fadeUp} className="mt-auto pt-8">
                 <div className="flex items-center gap-3">
                   <span className="h-px w-10 bg-light-blue" />
 
@@ -233,7 +225,7 @@ export default function WhyChooseUs() {
           </motion.div>
 
           {/* =========================
-              RIGHT FEATURES
+              CENTER FEATURE ROWS
           ========================== */}
           <motion.div
             initial="hidden"
@@ -243,7 +235,7 @@ export default function WhyChooseUs() {
               amount: 0.1,
             }}
             variants={staggerContainer}
-            className="ml-0 flex flex-col gap-3 lg:ml-2"
+            className="flex flex-col gap-3"
           >
             {reasons.map((reason) => {
               const Icon = reason.icon;
@@ -262,8 +254,7 @@ export default function WhyChooseUs() {
                   className="group relative overflow-hidden rounded-[18px] border border-gray-200 bg-[#e9edf1] px-5 py-4 transition-colors duration-500 hover:border-secondary hover:bg-white hover:shadow-lg sm:px-6 sm:py-5"
                 >
                   {/* Main Row */}
-                  <div className="grid items-center gap-5 sm:grid-cols-[90px_55px_1fr]">
-
+                  <div className="grid items-center gap-5 sm:grid-cols-[70px_55px_1fr]">
                     {/* Number */}
                     <motion.div
                       whileHover={{
@@ -272,7 +263,7 @@ export default function WhyChooseUs() {
                       transition={{
                         duration: 0.3,
                       }}
-                      className="ml-2 font-sans text-5xl font-bold leading-none text-secondary sm:text-6xl"
+                      className="ml-2 font-sans text-4xl font-bold leading-none text-secondary sm:text-5xl"
                     >
                       {reason.number}
                     </motion.div>
@@ -289,20 +280,17 @@ export default function WhyChooseUs() {
                         }}
                         className="flex h-10 w-10 items-center justify-center rounded-lg bg-light-blue/30 text-secondary transition-colors duration-500 group-hover:bg-secondary group-hover:text-white sm:h-11 sm:w-11"
                       >
-                        <Icon
-                          size={22}
-                          strokeWidth={1.6}
-                        />
+                        <Icon size={22} strokeWidth={1.6} />
                       </motion.div>
                     </div>
 
                     {/* Content */}
-                    <div className="ml-0 sm:ml-4">
-                      <h3 className="text-xl leading-tight font-bold text-dark transition-colors duration-500 group-hover:text-secondary sm:text-2xl">
+                    <div className="ml-0 sm:ml-2">
+                      <h3 className="text-lg font-bold leading-tight text-dark transition-colors duration-500 group-hover:text-secondary sm:text-xl">
                         {reason.title}
                       </h3>
 
-                      <p className="mt-1 max-w-2xl text-xs font-light leading-5 text-primary/70 sm:text-base sm:leading-6">
+                      <p className="mt-1 max-w-2xl text-xs font-light leading-5 text-primary/70 sm:text-sm sm:leading-6">
                         {reason.description}
                       </p>
                     </div>
@@ -325,6 +313,65 @@ export default function WhyChooseUs() {
                 </motion.article>
               );
             })}
+          </motion.div>
+
+          {/* =========================
+              RIGHT — FOUNDER CARD
+          ========================== */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: 40,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.2,
+            }}
+            transition={{
+              duration: 0.8,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="relative flex min-h-[400px] flex-col overflow-hidden rounded-[22px] bg-[#222547]"
+          >
+            {/* Founder Image */}
+            <div className="relative h-[220px] overflow-hidden">
+              <img
+                src="https://meointernationallogistics.com/wp-content/uploads/elementor/thumbs/WhatsApp-Image-2020-11-09-at-4.25.29-PM-psdt3farml79b1o5ndrc9p97izokxrbmuajgyu7f7c.jpeg"
+                alt="Nitin Arora, Founder and CEO"
+                className="h-full w-full object-cover object-top transition-transform duration-700 hover:scale-105"
+              />
+
+              {/* Image Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#222547] via-transparent to-transparent" />
+            </div>
+
+            {/* Founder Content */}
+            <div className="flex flex-1 flex-col p-5 sm:p-6">
+              <span className="text-lg font-semibold uppercase tracking-[0.25em] text-[#8EC0E6]">
+                Founder’s Vision
+              </span>
+
+              <blockquote className="mt-3 text-base leading-6 text-white/85">
+                “To establish an organization capable of providing Total Cargo
+                Logistics Solutions of high-level standard of solutions that
+                will draw the attention of customers all over the world!”
+              </blockquote>
+
+              {/* Founder Details */}
+              <div className="mt-auto border-t border-white/20 pt-4">
+                <h3 className="text-xl font-semibold text-white">
+                  Nitin Arora
+                </h3>
+
+                <p className="mt-1 text-base font-medium uppercase tracking-wider text-[#8EC0E6]">
+                  Founder, CEO
+                </p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

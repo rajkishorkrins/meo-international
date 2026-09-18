@@ -49,19 +49,31 @@ const features = [
 export default function Hero() {
   return (
     <section className="relative isolate min-h-[780px] overflow-hidden bg-[#101a35] mt-12">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/images/hero-bg3.png')",
-        }}
-      />
+     {/* Background Video */}
+{/* <div className="absolute inset-0 -z-20 overflow-hidden">
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    preload="auto"
+    className="h-full w-full object-cover"
+  >
+    <source src="/video/hero-6.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div> */}
 
-      {/* Dark Overlay */}
-      {/* <div className="absolute inset-0 -z-10 bg-[#101a35]/2" /> */}
+      <div className="absolute inset-0 -z-20 overflow-hidden">
+  <img
+    src="/images/hero-bg7.png"
+    alt="MEO International Logistics"
+    className="h-full w-full object-cover"
+  />
+</div>
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#101a35] via-[#101a35]/25 to-[#101a35]/5" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#101a35]/90 via-[#101a35]/35 to-[#101a35]/20" />
 
       {/* Main Content */}
       <div className="mx-auto flex min-h-[780px] max-w-[1600px] items-center px-6 py-24 sm:px-10 lg:px-16 xl:px-24">
@@ -112,37 +124,6 @@ export default function Hero() {
             flexible freight forwarding and cargo solutions, connecting
             businesses across India and the world.
           </motion.p>
-
-          {/* Features */}
-          {/* <motion.div
-            variants={fadeUp}
-            className="mt-9 grid max-w-3xl gap-5 sm:grid-cols-3"
-          >
-            {features.map((feature) => {
-              const Icon = feature.icon;
-
-              return (
-                <div
-                  key={feature.title}
-                  className="flex items-start gap-3"
-                >
-                  <div className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#8EC0E6]/40 bg-white/5 text-[#8EC0E6]">
-                    <Icon size={17} strokeWidth={1.8} />
-                  </div>
-
-                  <div>
-                    <h3 className="text-sm font-semibold text-white">
-                      {feature.title}
-                    </h3>
-
-                    <p className="mt-1 text-xs leading-5 text-white/55">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </motion.div> */}
 
           {/* CTA Buttons */}
           <motion.div

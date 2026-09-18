@@ -7,6 +7,7 @@ import CompanyStats from "@/components/home/CompanyStats";
 import Recognition from "@/components/home/Recognition";
 import Branches from "../components/home/Branches";
 import CarrierPartners from "@/components/home/CarrierPartners";
+import CTA from "@/components/home/CTA";
 import Footer from "@/components/ui/Footer";
 
 export default function Page() {
@@ -22,6 +23,7 @@ export default function Page() {
           <CompanyStats />
           <Branches />
           <CarrierPartners />
+          <CTA />
       </main>
       <Footer />
     </>
